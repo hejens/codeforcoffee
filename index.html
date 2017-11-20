@@ -1,21 +1,33 @@
+<!DOCTYPE html>
 <html>
 <style>
 .content {
     max-width: 500px;
     margin: auto;
 	padding: 20px;
+	font-size: 24px;
 }
+
+input[type="password"]{
+	font-size:24px;
+}
+
+input[type="submit"]{
+	font-size:24px;
+}
+
 </style>
 <script>
 	function check() {
 		var pin = document.getElementById("pin").value;
-		if (pin === "8623" || pin === "5981" || pin === "1337") {
+		if (pin === "7481" || pin === "3263" || pin === "1337") {
 			success();
 		} else {
 			fail();
 		}
 		return false;
 	}
+
 	function success() {
 		document.body.style.backgroundColor = "green";
 		document.getElementById("feedback").innerHTML = "<h2>Correct!</h2>";
@@ -29,7 +41,7 @@
 <body>
 	<div class="content">
 		<form name="pinform" onsubmit="event.preventDefault();check()">
-			#codeforcoffee: <input id="pin" type="text" pattern="\d*" maxlength="4" size="4" autofocus> 
+			<h1>#codeforcoffee: <input id="pin" type="password" pattern="\d*" maxlength="4" size="4" autofocus> </h1>
 			<span>
 				<input type="submit" value="Check!">
 				<a href="#" onclick="window.location.reload(true);">reset</a>

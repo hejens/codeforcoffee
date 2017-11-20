@@ -1,4 +1,11 @@
 <html>
+<style>
+.content {
+    max-width: 500px;
+    margin: auto;
+	padding: 20px;
+}
+</style>
 <script>
 	function check() {
 		var pin = document.getElementById("pin").value;
@@ -9,7 +16,6 @@
 		}
 		return false;
 	}
-
 	function success() {
 		document.body.style.backgroundColor = "green";
 		document.getElementById("feedback").innerHTML = "<h2>Correct!</h2>";
@@ -21,9 +27,14 @@
 	}
 </script>
 <body>
-	<form name="pinform" onsubmit="event.preventDefault();check()">
-	  #codeforcoffee: <input id="pin" type="password" maxlength="4" size="4" autofocus> 
-	  <a href="#" onclick="window.location.reload(true);">reset</a>
-	</form>
-	<div id="feedback"></div>
+	<div class="content">
+		<form name="pinform" onsubmit="event.preventDefault();check()">
+			#codeforcoffee: <input id="pin" type="text" pattern="\d*" maxlength="4" size="4" autofocus> 
+			<span>
+				<input type="submit" value="Check!">
+				<a href="#" onclick="window.location.reload(true);">reset</a>
+			</span>
+		</form>
+		<div id="feedback"></div>
+	</div>
 </body>

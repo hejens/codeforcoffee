@@ -1,0 +1,29 @@
+<html>
+<script>
+	function check() {
+		var pin = document.getElementById("pin").value;
+		if (pin === "8623" || pin === "5981" || pin === "1337") {
+			success();
+		} else {
+			fail();
+		}
+		return false;
+	}
+
+	function success() {
+		document.body.style.backgroundColor = "green";
+		document.getElementById("feedback").innerHTML = "<h2>Correct!</h2>";
+	}
+	
+	function fail() {
+		document.body.style.backgroundColor = "red";
+		document.getElementById("feedback").innerHTML = "<h2>Wrong!</h2>";
+	}
+</script>
+<body>
+	<form name="pinform" onsubmit="event.preventDefault();check()">
+	  #codeforcoffee: <input id="pin" type="password" maxlength="4" size="4" autofocus> 
+	  <a href="#" onclick="window.location.reload(true);">reset</a>
+	</form>
+	<div id="feedback"></div>
+</body>
